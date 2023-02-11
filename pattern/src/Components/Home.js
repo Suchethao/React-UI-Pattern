@@ -6,6 +6,7 @@ import './Home.css';
 const Home = () => {
   const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
   const [pokemonData, setPokemonData] = useState([]);
+  
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon/")
@@ -29,14 +30,13 @@ const Home = () => {
 
   return (
     <div className="pokemon-container">
-    <h2 className="pokemon-name">{pokemonData[currentPokemonIndex].name}</h2>
     <img className="pokemon-image" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${currentPokemonIndex + 1}.png`} alt="pokemon" />
-    <div className="arrow-container">
-      <button className="prev-arrow" onClick={prevPokemon}>⟵</button>
-      <button onClick={nextPokemon}>⟶</button>
-    </div>
+    <h3 className="pokemon-description">{pokemonData[currentPokemonIndex].name}</h3>
+    <button className="prev-arrow" onClick={prevPokemon}>⟵</button>
+    <button className= "next-arrow"onClick={nextPokemon}>⟶</button>
   </div>
   );
 };
+
 
 export default Home;

@@ -1,34 +1,7 @@
-// import React, { useState } from "react";
 
-// const Home = () => {
-//   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-//   const images = [
-//     "https://picsum.photos/200/300?image=10",
-//     "https://picsum.photos/200/300?image=20",
-//     "https://picsum.photos/200/300?image=30"
-//   ];
-
-//   const nextImage = () => {
-//     setCurrentImageIndex((currentImageIndex + 1) % images.length);
-//   };
-
-//   const prevImage = () => {
-//     setCurrentImageIndex((currentImageIndex + images.length - 1) % images.length);
-//   };
-
-//   return (
-//     <div>
-//         <h1>Slider Wireframe</h1>
-//       <img src={images[currentImageIndex]} alt="slideshow" />
-//       <button onClick={prevImage}>Prev</button>
-//       <button onClick={nextImage}>Next</button>
-//     </div>
-//   );
-// };
-
-// export default Home;
 
 import React, { useState, useEffect } from "react";
+import './Home.css';
 
 const Home = () => {
   const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
@@ -55,13 +28,14 @@ const Home = () => {
   }
 
   return (
-    <div>
-      <h1>Pokemon Slider</h1>
-      <h2>{pokemonData[currentPokemonIndex].name}</h2>
-      <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${currentPokemonIndex + 1}.png`} alt="pokemon" />
-      <button onClick={prevPokemon}>Prev</button>
-      <button onClick={nextPokemon}>Next</button>
+    <div className="pokemon-container">
+    <h2 className="pokemon-name">{pokemonData[currentPokemonIndex].name}</h2>
+    <img className="pokemon-image" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${currentPokemonIndex + 1}.png`} alt="pokemon" />
+    <div className="arrow-container">
+      <button className="prev-arrow" onClick={prevPokemon}>⟵</button>
+      <button onClick={nextPokemon}>⟶</button>
     </div>
+  </div>
   );
 };
 

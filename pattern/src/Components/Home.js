@@ -8,18 +8,23 @@ const Home = () => {
     "https://picsum.photos/200/300?image=30"
   ];
 
-    const nextImage = () => {
-      setCurrentImageIndex((currentImageIndex + 1) % images.length);
-    };
-
-  return (
-      <div>
-        <img src={images[currentImageIndex]} alt="slideshow" />
-        <button onClick={nextImage}>Next</button>
-      </div>
-    );
+  const nextImage = () => {
+    setCurrentImageIndex((currentImageIndex + 1) % images.length);
   };
 
-  export default Home;
-  
+  const prevImage = () => {
+    setCurrentImageIndex((currentImageIndex + images.length - 1) % images.length);
+  };
+
+  return (
+    <div>
+      <img src={images[currentImageIndex]} alt="slideshow" />
+      <button onClick={prevImage}>Prev</button>
+      <button onClick={nextImage}>Next</button>
+    </div>
+  );
+};
+
+export default Home;
+
   

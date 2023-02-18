@@ -29,12 +29,13 @@ const Home = () => {
   }
 
   return (
-    <div className="pokemon-container">
-    <img className="pokemon-image" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${currentPokemonIndex + 1}.png`} alt="pokemon" />
-    <h3 className="pokemon-description">{pokemonData[currentPokemonIndex].name}</h3>
-    <button className="prev-arrow" onClick={prevPokemon}>⟵</button>
-    <button className= "next-arrow"onClick={nextPokemon}>⟶</button>
-  </div>
+<div className="pokemon-container">
+  <img className="pokemon-image" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${currentPokemonIndex + 1}.png`} alt="pokemon" />
+  <h3 className="pokemon-description">{pokemonData[currentPokemonIndex].name}</h3>
+  <button className="prev-arrow" onClick={prevPokemon}>&#9664;</button>
+  <button className="next-arrow" onClick={nextPokemon}>&#9654;</button>
+</div>
+
   );
 };
 
